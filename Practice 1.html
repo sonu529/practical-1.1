@@ -1,42 +1,18 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>Student Registration Form</title>
+  <title>Student Registration Form</title>
 </head>
 <body>
-    <h2>Student Registration Form</h2>
-
-    <form id="registrationForm">
-        <!-- Name Field -->
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name" required 
-               pattern="[A-Za-z\s]+" title="Enter letters only">
-        <br><br>
-
-        <!-- Email Field -->
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required>
-        <br><br>
-
-        <!-- Age Field -->
-        <label for="age">Age:</label>
-        <input type="number" id="age" name="age" required min="1" max="120">
-        <br><br>
-
-        <input type="submit" value="Register">
-    </form>
-
-    <script>
-        document.getElementById('registrationForm').addEventListener('submit', function(event) {
-            if (!this.checkValidity()) {
-                // Let the browser show validation errors
-                return;
-            }
-            event.preventDefault();
-            alert('Registration successful!');
-            this.reset();
-        });
-    </script>
+  <h2>Student Registration Form</h2>
+  <form action="/submit" method="post">
+    <label for="name">Full Name:</label><br>
+    <input type="text" id="name" name="name" required><br><br>
+    <label for="email">Email:</label><br>
+    <input type="email" id="email" name="email" required><br><br>
+    <label for="age">Age:</label><br>
+    <input type="number" id="age" name="age" min="10" max="100" required><br><br>
+    <input type="register" value="Register">
+  </form>
 </body>
 </html>
